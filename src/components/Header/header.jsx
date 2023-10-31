@@ -1,60 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import './header.css';
+import React from "react";
+import "./header.css"
+import logo from '../../assets/logo.png'
+import { FaSearch } from 'react-icons/fa'
+import { Link } from "react-scroll";
 
-const Header = () => {
-  const [time, setTime] = useState(new Date());
+function Header() {
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
+    const handleHeaderInput = (e) => {
+        e.preventDefault();
+    }
+    return (
+        <>
+            <div className="header_container">
+                <div className="logo_conatainer">
+                    <img src={logo} alt="image" />
+                </div>
+                <Link to="search" smooth={true} duration={500}>
+                <div className="header_search_container">
+                         <FaSearch className='search_icon_header'/>
+                        <input type="text" className="search_header" onClick={handleHeaderInput} readOnly={true} placeholder="search"/>              
+                </div>                
+                </Link>
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
-
-  const day = time.toLocaleString('default', { weekday: 'long' });
-  const month = time.toLocaleString('default', { month: 'long' });
-  const dateNumber = time.getDate();
-  const year = time.getFullYear();
-  const hours = time.getHours();
-  const minutes = time.getMinutes();
-  const seconds = time.getSeconds();
-
-  return (
-    <div className='headerContainer'>
-      <div className='headerWraper'>
-        <div className='DateSession'>
-          <div className='day'>
-            <h1 className='day'>{day}</h1>
           </div>
-          <div className='mon_date'>
-            <span className='month'>{month}</span>
-            <span className='dates'>{dateNumber}{getOrdinalSuffix(dateNumber)}</span>
-            <span className='year'>{year}</span>
-          </div>
-        </div>
-        <div className='countdown'>
-          <div className='count'>
-            <span className='hours'>{hours.toString().padStart(2, '0')}</span>
-            <span>:</span>
-            <span className='minutes'>{minutes.toString().padStart(2, '0')}</span>
-            <span>:</span>
-            <span className='seconds'>{seconds.toString().padStart(2, '0')}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Helper function to get the ordinal suffix for the date number
-function getOrdinalSuffix(dateNumber) {
-  const suffixes = ['th', 'st', 'nd', 'rd'];
-  const remainder = dateNumber % 10;
-  const suffix = suffixes[remainder] || suffixes[0];
-  return suffix;
+        </>
+    )
 }
 
 export default Header;

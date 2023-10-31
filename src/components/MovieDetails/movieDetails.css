@@ -1,0 +1,147 @@
+.movie_details_container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.movie_details_wrapper{
+    
+}
+.backdrop_image_wrapper{
+  /* background-image: url('../../assets/testimage.png'); */
+  height: 500px;
+  background-position: top right;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.movie_wrapper_details{
+   width: 94vw;
+   display: grid;
+   grid-template-columns: 2fr 1.1fr;
+   
+}
+.h1_movie_details{
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  top: 15%;
+  color:  #fff;
+  padding: 10px 0px 10px 0px;
+}
+.h1_movie_details::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 3;
+}
+.details_container{
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.actual_text{
+    font-size: large;
+    font-family: poppins;
+    color: #fff;
+}
+
+.h1_description{
+    font-size: calc(medium + 50px);
+
+}
+.md{
+    font-size: larger;
+    font-family: poppins;
+    background: linear-gradient(to right, rgb(104, 201, 240),#272424);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.trailer{
+    font-size: larger;
+    font-family: poppins;
+    background: linear-gradient(to right, rgb(104, 201, 240),#272424);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+.format{
+    font-size: larger;
+    font-family: poppins;
+    background: linear-gradient(to right, rgb(104, 201, 240),#272424);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.dtext{
+    font-size: large;
+    font-family: poppins;
+    color: #fff;
+    padding-left: 1rem;
+    list-style: none;
+
+}
+.released_date{
+    margin-bottom: 15px;
+}
+
+.stars{
+    margin-top: 10px;
+}
+
+.trailer_container{
+    margin: 1rem 0px 2rem 0px;
+}
+
+.icon_back{
+    font-size: 30px;
+    color: rgb(254, 255, 255);
+    
+}
+.duration{
+    margin-top: 10px;
+}
+.genre_list{
+    display: flex;
+}
+
+a{
+    color: rgb(90, 157, 196);
+    cursor: pointer;
+}
+
+.pdC{
+    display: flex;
+}
+.company_wrapper{
+    /* width: 200px;
+    height: 200px; */
+}
+.container_logo{
+    height: 200px;
+    width: 300px;
+}
+
+.comp_image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
